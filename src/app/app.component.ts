@@ -42,7 +42,9 @@ export class AppComponent {
 		searchTerm = searchTerm.toLowerCase();
 		for(let i=0; i < this.sourceList.length; i++) {
 			let name = this.sourceList[i].name.toLowerCase();
-			if (name.indexOf(searchTerm) >= 0) {
+			let typeOrbit = this.sourceList[i].orbitType.toLowerCase();
+			let typeSat = this.sourceList[i].type.toLowerCase();
+			if (name.indexOf(searchTerm) >= 0 || typeOrbit.indexOf(searchTerm) >= 0 || typeSat.indexOf(searchTerm) >= 0) {
 				matchingSatellites.push(this.sourceList[i]);
 			}
 		}
